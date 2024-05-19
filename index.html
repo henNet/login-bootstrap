@@ -9,23 +9,45 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Login</title>
   </head>
   <body class="d-flex flex-column align-items-center py-4 bg-body-tertiary">
-    <header class="w-100 d-flex justify-content-end p-2 gap-4">
-        <div class="form-check">
-            <input onchange="modeLight()" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label" for="flexRadioDefault1">
-              Light
-            </label>
-          </div>
-          <div class="form-check">
-            <input onchange="modeDark()" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-              Dark
-            </label>
-          </div>
+    <header class="w-100 d-flex justify-content-end px-3 gap-4">
+      <!-- <div class="form-check">
+        <input
+          onchange="modeLight()"
+          class="form-check-input"
+          type="radio"
+          name="flexRadioDefault"
+          id="flexRadioDefault1"
+        />
+        <label class="form-check-label" for="flexRadioDefault1"> Light </label>
+      </div>
+      <div class="form-check">
+        <input
+          onchange="modeDark()"
+          class="form-check-input"
+          type="radio"
+          name="flexRadioDefault"
+          id="flexRadioDefault2"
+          checked
+        />
+        <label class="form-check-label" for="flexRadioDefault2"> Dark </label>
+      </div> -->
+      <div class="form-check form-switch">
+        <label class="form-check-label" for="flexSwitchCheckChecked" id="switche">
+          Dark
+        </label>
+        <input
+          onchange="mode()"
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckChecked"
+          checked
+        />
+      </div>
     </header>
     <main class="w-100 m-auto form-container">
       <form action="">
@@ -47,33 +69,51 @@
         </div>
 
         <div class="form-floating">
-            <input
-              type="password"
-              class="form-control"
-              id="floatingInput"
-              placeholder="you-email@gmail.com"
-            />
-            <label for="floatingInput">Password</label>
-          </div>
+          <input
+            type="password"
+            class="form-control"
+            id="floatingInput"
+            placeholder="you-email@gmail.com"
+          />
+          <label for="floatingInput">Password</label>
+        </div>
 
-          <div class="form-check text-start my-3">
-            <input type="checkbox" class="form-check-input" id="flexCheckDefault">
-            <label for="flexCheckDefault" class="form-check-label">Remember Me</label>
-          </div>
-          <button class="btn btn-primary w-100 py-2">Sing in</button>
+        <div class="form-check text-start my-3">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="flexCheckDefault"
+          />
+          <label for="flexCheckDefault" class="form-check-label"
+            >Remember Me</label
+          >
+        </div>
+        <button class="btn btn-primary w-100 py-2">Sing in</button>
       </form>
       <p class="text-body-secondary mt-5 mb-3">@ Henrique Neto 2024</p>
     </main>
     <script>
-        function modeLight(){
-            var html = document.querySelector("html");
-            html.setAttribute("data-bs-theme", "light");
-        }
+      function modeLight() {
+        var html = document.querySelector("html");
+        html.setAttribute("data-bs-theme", "light");
+      }
 
-        function modeDark(){
-            var html = document.querySelector("html");
-            html.setAttribute("data-bs-theme", "dark");
+      function modeDark() {
+        var html = document.querySelector("html");
+        html.setAttribute("data-bs-theme", "dark");
+      }
+
+      function mode(){
+        var label = document.querySelector("#switche");
+
+        if(label.textContent.trim() == "Dark"){
+            modeLight();
+            label.innerHTML = "Light";
+        }else{
+            modeDark();
+            label.innerHTML = "Dark";
         }
+      }
     </script>
   </body>
 </html>
