@@ -13,9 +13,19 @@
     <title>Login</title>
   </head>
   <body class="d-flex flex-column align-items-center py-4 bg-body-tertiary">
-    <header class="w-100 d-flex justify-content-end p-2 gap-2">
-        <button onclick="modeLight()" class="btn btn-light">Ligth</button>
-        <button onclick="modeDark()" class="btn btn-dark">Dark</button>
+    <header class="w-100 d-flex justify-content-end p-2 gap-4">
+        <div class="form-check">
+            <input onchange="modeLight()" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Light
+            </label>
+          </div>
+          <div class="form-check">
+            <input onchange="modeDark()" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Dark
+            </label>
+          </div>
     </header>
     <main class="w-100 m-auto form-container">
       <form action="">
