@@ -12,7 +12,11 @@
     <link rel="stylesheet" href="style.css">
     <title>Login</title>
   </head>
-  <body class="d-flex align-items-center py-4 bg-body-tertiary">
+  <body class="d-flex flex-column align-items-center py-4 bg-body-tertiary">
+    <header class="w-100 d-flex justify-content-end p-2 gap-2">
+        <button onclick="modeLight()" class="btn btn-light">Ligth</button>
+        <button onclick="modeDark()" class="btn btn-dark">Dark</button>
+    </header>
     <main class="w-100 m-auto form-container">
       <form action="">
         <img
@@ -50,5 +54,16 @@
       </form>
       <p class="text-body-secondary mt-5 mb-3">@ Henrique Neto 2024</p>
     </main>
+    <script>
+        function modeLight(){
+            var html = document.querySelector("html");
+            html.setAttribute("data-bs-theme", "light");
+        }
+
+        function modeDark(){
+            var html = document.querySelector("html");
+            html.setAttribute("data-bs-theme", "dark");
+        }
+    </script>
   </body>
 </html>
